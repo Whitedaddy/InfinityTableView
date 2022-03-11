@@ -1,0 +1,6 @@
+framework module Pods_ImageScroller {
+  umbrella header "Pods-ImageScroller-umbrella.h"
+
+  export *
+  module * { export * }
+}

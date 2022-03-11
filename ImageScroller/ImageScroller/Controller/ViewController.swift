@@ -9,9 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let imageDownloading = ImageDownloading()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        imageDownloading.GetNewSong()
     }
 
 
