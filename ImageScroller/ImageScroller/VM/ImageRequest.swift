@@ -9,10 +9,13 @@ import UIKit
 
 class ImageDownloading {
     
-//    var downloadedData: SearchedImages = SearchedImages(total: 0, totalHits: 0, hits: [])
-    
-    func GetNewSong(completed: @escaping (_ data: SearchedImages?) -> () )
+    let apiKey = "26099283-48c3653394e25a69e75ca7763"
+    let apiSearchRequest = "funny+cat"
+   
+    func GetNewSong(page: Int, completed: @escaping (_ data: SearchedImages?) -> () )
     {
+        let apiURL = "https://pixabay.com/api/?key="+apiKey+"&q="+apiSearchRequest+"&page="+String(page)
+        
         guard let requestUrl = URL(string: apiURL) else { return }
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
@@ -28,9 +31,6 @@ class ImageDownloading {
              }
              
              guard let data = data else {return}
-             //             if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
-             //                print(JSONString) }
-             
              do
              {
                  let backData = try JSONDecoder().decode(SearchedImages.self, from: data)

@@ -12,12 +12,14 @@ import SnapKit
 class InfinityTableViewCell :UITableViewCell {
     
     let subTitleForImage = UILabel()
-    let number = UILabel()
+    let tagsLabel = UILabel()
     let myimage = UIImage()
     var myImageView = UIImageView()
+    let cellID = UILabel()
+
 
     
-    var deleteButtonAction : (() -> ())?
+    var openImage : (() -> ())?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,16 +30,37 @@ class InfinityTableViewCell :UITableViewCell {
         fatalError("Fatal error")
     }
     func addViews() {
-        subTitleForImage.text = "Description"
-//        contentView.addSubview(myImageView)
+        subTitleForImage.textColor = .white
+        subTitleForImage.font = .systemFont(ofSize: 20, weight: .light)
         contentView.addSubview(subTitleForImage)
-//        contentView.addSubview(number)
+        
+        tagsLabel.textColor = .white
+        tagsLabel.text = "Tags: "
+        tagsLabel.font = .boldSystemFont(ofSize: 20)
+        contentView.addSubview(tagsLabel)
+        
+        contentView.backgroundColor = .black
+        
+        
+        cellID.textColor = .red
+        contentView.addSubview(cellID)
+        cellID.snp.makeConstraints { make in
+            make.bottom.equalTo(contentView)
+            make.right.equalTo(contentView)
+            make.centerY.equalTo(tagsLabel)
+        }
     }
     func makeConstraints() {
+        tagsLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(contentView)
+            make.left.equalTo(contentView).inset(25)
+            make.height.equalTo(80)
+        }
+        
         subTitleForImage.snp.makeConstraints { make in
             make.bottom.equalTo(contentView)
-            make.width.equalTo(contentView)
-            make.height.equalTo(80)
+            make.left.equalTo(tagsLabel).inset(70)
+            make.centerY.equalTo(tagsLabel)
         }
     }
 }
