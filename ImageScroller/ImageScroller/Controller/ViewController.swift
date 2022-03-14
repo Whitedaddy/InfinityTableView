@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let imageDownloading = ImageDownloading()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageDownloading.GetNewSong()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let infinityTableView = InfinityTableView ()
+        view.addSubview(infinityTableView)
+        infinityTableView.snp.makeConstraints
+        { make in make.edges.equalTo(self.view) }
     }
 
 

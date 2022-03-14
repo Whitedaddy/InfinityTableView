@@ -17,6 +17,8 @@
 		FA1CCB2A27DBA19D00F80986 /* Common variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CCB2927DBA19D00F80986 /* Common variables.swift */; };
 		FA1CCB2C27DBA25000F80986 /* CodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CCB2B27DBA25000F80986 /* CodableData.swift */; };
 		FA1CCB2F27DBB7C400F80986 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CCB2E27DBB7C400F80986 /* ImageRequest.swift */; };
+		FA1CCB3127DBC84400F80986 /* InfinityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CCB3027DBC84400F80986 /* InfinityTableView.swift */; };
+		FA1CCB3327DBC85700F80986 /* InfinityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CCB3227DBC85700F80986 /* InfinityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		FA1CCB2927DBA19D00F80986 /* Common variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Common variables.swift"; sourceTree = "<group>"; };
 		FA1CCB2B27DBA25000F80986 /* CodableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableData.swift; sourceTree = "<group>"; };
 		FA1CCB2E27DBB7C400F80986 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		FA1CCB3027DBC84400F80986 /* InfinityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityTableView.swift; sourceTree = "<group>"; };
+		FA1CCB3227DBC85700F80986 /* InfinityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityTableViewCell.swift; sourceTree = "<group>"; };
 		FC446EB729828EBCBA07D12B /* Pods-ImageScroller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageScroller.release.xcconfig"; path = "Target Support Files/Pods-ImageScroller/Pods-ImageScroller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,8 @@
 		FA1CCB2527DBA10100F80986 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA1CCB3027DBC84400F80986 /* InfinityTableView.swift */,
+				FA1CCB3227DBC85700F80986 /* InfinityTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 				FA1CCB2C27DBA25000F80986 /* CodableData.swift in Sources */,
 				FA1CCB2F27DBB7C400F80986 /* ImageRequest.swift in Sources */,
 				FA1CCB1627DAC6A900F80986 /* ViewController.swift in Sources */,
+				FA1CCB3327DBC85700F80986 /* InfinityTableViewCell.swift in Sources */,
+				FA1CCB3127DBC84400F80986 /* InfinityTableView.swift in Sources */,
 				FA1CCB1227DAC6A900F80986 /* AppDelegate.swift in Sources */,
 				FA1CCB1427DAC6A900F80986 /* SceneDelegate.swift in Sources */,
 				FA1CCB2A27DBA19D00F80986 /* Common variables.swift in Sources */,
