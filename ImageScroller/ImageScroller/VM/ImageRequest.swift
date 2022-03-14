@@ -15,7 +15,7 @@ enum Result {
 class ImageDownloading {
     
     let apiKey = "26099283-48c3653394e25a69e75ca7763"
-    let apiSearchRequest = "funny+joke"
+    let apiSearchRequest = "minimalism+wallpapers"
     let ghostImage = Hit(id: 1, pageURL: "", tags: "Network troubles", webformatURL: "")
     
     func GetNewSong(page: Int, completed: @escaping (_ data: SearchedImages?) -> () )  {

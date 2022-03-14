@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         infinityTableView.snp.makeConstraints
         { make in make.edges.equalTo(self.view) }
     }
-
-
+    
 }
 
