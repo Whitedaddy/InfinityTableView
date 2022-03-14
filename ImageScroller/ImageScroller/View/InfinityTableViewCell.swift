@@ -35,7 +35,6 @@ class InfinityTableViewCell :UITableViewCell {
         contentView.addSubview(subTitleForImage)
         
         tagsLabel.textColor = .white
-        tagsLabel.text = "Tags: "
         tagsLabel.font = .boldSystemFont(ofSize: 20)
         contentView.addSubview(tagsLabel)
         
@@ -59,7 +58,7 @@ class InfinityTableViewCell :UITableViewCell {
         
         subTitleForImage.snp.makeConstraints { make in
             make.bottom.equalTo(contentView)
-            make.left.equalTo(tagsLabel).inset(70)
+            make.left.equalTo(tagsLabel.snp.right)
             make.centerY.equalTo(tagsLabel)
         }
     }

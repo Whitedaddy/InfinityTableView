@@ -36,6 +36,7 @@ class InfinityTableView: UIView  {
             }
             else {
                 print("No data returned")
+                self.setupTableView()
             }
         }
     }
@@ -100,11 +101,16 @@ extension InfinityTableView:  UITableViewDelegate, UITableViewDataSource {
             cell.subTitleForImage.text = "\(downloadedData.hits[indexPath.row].tags)"
             
             cell.cellID.text = String(indexPath.row)
-            
-            let currentImageURL = downloadedData.hits[indexPath.row].webformatURL
-            guard let url = URL(string: currentImageURL) else {return cell}
-            cell.myImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "imagePlaceholder"), options: [.continueInBackground, .progressiveLoad])
-            cell.myImageView.backgroundColor = .black
+            if downloadedData.total != 0 {
+                cell.tagsLabel.text = "Tags: "
+                let currentImageURL = downloadedData.hits[indexPath.row].webformatURL
+                guard let url = URL(string: currentImageURL) else {return cell}
+                cell.myImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "imagePlaceholder"), options: [.continueInBackground, .progressiveLoad])
+                cell.myImageView.backgroundColor = .black
+            } else {
+                cell.tagsLabel.text = "No content: "
+                cell.myImageView.image = UIImage(named: "imagePlaceholder")
+            }
             cell.addSubview(cell.myImageView)
             cell.myImageView.snp.makeConstraints { make in
                 make.width.equalToSuperview()
@@ -120,14 +126,22 @@ extension InfinityTableView:  UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UIScreen.main.bounds.width + 80
+        if (indexPath.section == 0) {
+            return UIScreen.main.bounds.width + 80
+        }
+        else if indexPath.section == 1 {
+            return 100
+        }
+        else {
+            return UIScreen.main.bounds.width + 80
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 //        print("offset = \(offsetY), contentHeight = \(contentHeight)")
-        if (offsetY > contentHeight - scrollView.frame.size.height) {
+        if (offsetY > contentHeight - scrollView.frame.size.height*1.5) && downloadedData.hits.count%20 == 0 {
             print("load new data")
             page += 1
             imageDownloading.GetNewSong(page: page) { data in
